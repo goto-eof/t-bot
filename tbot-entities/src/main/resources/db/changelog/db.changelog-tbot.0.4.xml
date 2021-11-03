@@ -1,0 +1,1234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	
+	<changeSet  author="andrei.dodu@hotmail.it"  id="CONFIG_INSERIMENTO_DOMANDE">  
+	<!-- ################################################################### -->
+	   <!-- ####################[ Bot configuration ]##################### -->
+	<!-- ################################################################### -->
+	
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="SYS000"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="SYSTEM"/>
+	        	<column  name="tf001_t_dmd"  	 value="Aggiornamento impostazioni bot"/>
+	        	<column  name="tf001_t_sgr"  	 value="Aggiornamento impostazioni bot"/>
+	    </insert>
+	    
+	
+	   	    
+	
+	<!-- Inserimento delle domande -->
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="D010"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="DOM"/>
+	        	<column  name="tf001_c_dom"  	 value="bot_type"/>
+	        	<column  name="tf001_t_dmd"  	 value="Tipo di Bot"/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_sgr"  	 value="Scegliere la tipologia del bot"/>
+	    </insert>
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="bot_type"/>
+	        	<column  name="tf005_c_dmn_val"  value="rss_feed_reader"/>
+	        	<column  name="tf005_c_dmn_des"  value="RSS Feed Reader"/>
+	    </insert>
+	    
+	   	<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="D020"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="BOL"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Abilita Bot"/>
+				<column  name="tf001_t_sgr"  	 value="Abilita il Bot"/>	        	
+	    </insert>	      
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="true_false"/>
+	        	<column  name="tf005_c_dmn_val"  value="true"/>
+	        	<column  name="tf005_c_dmn_des"  value="Si"/>
+	    </insert>
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="true_false"/>
+	        	<column  name="tf005_c_dmn_val"  value="false"/>
+	        	<column  name="tf005_c_dmn_des"  value="No"/>
+	    </insert>	    
+	    
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="D030"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Nome Bot"/>
+	        	<column  name="tf001_t_sgr"  	 value="es. Mio Bot"/>
+	    </insert>  	
+	      
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="D040"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Descrizione del bot"/>
+	        	<column  name="tf001_t_sgr"  	 value="e. Il Mio primo Bot che legge RSS Feeds"/>
+	    </insert>  		    	
+
+	      
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="D050"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Token Telegram del Bot"/>
+	        	<column  name="tf001_t_sgr"  	 value="Token generato da Telegram per il Bot in questione"/>
+	    </insert>  	      
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="D060"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="ID delle chat separate dalla pipe"/>
+	        	<column  name="tf001_t_sgr"  	 value="es. @Chat1|@Chat2"/>
+	    </insert>  	
+	    
+  	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="D070"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="DOM"/>
+	        	<column  name="tf001_c_dom"  	 value="news_check_intervals"/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Verifica presenza news ogni x secondi"/>
+	        	<column  name="tf001_t_sgr"  	 value="Intervallo di tempo in cui il Bot verifica la presenza di news"/>
+	    </insert>
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="news_check_intervals"/>
+	        	<column  name="tf005_c_dmn_val"  value="60"/>
+	        	<column  name="tf005_c_dmn_des"  value="1 Minuto"/>
+	    </insert>
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="news_check_intervals"/>
+	        	<column  name="tf005_c_dmn_val"  value="120"/>
+	        	<column  name="tf005_c_dmn_des"  value="2 Minuti"/>
+	    </insert>	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="news_check_intervals"/>
+	        	<column  name="tf005_c_dmn_val"  value="180"/>
+	        	<column  name="tf005_c_dmn_des"  value="3 Minuti"/>
+	    </insert>	
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="news_check_intervals"/>
+	        	<column  name="tf005_c_dmn_val"  value="240"/>
+	        	<column  name="tf005_c_dmn_des"  value="4 Minuti"/>
+	    </insert>
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="news_check_intervals"/>
+	        	<column  name="tf005_c_dmn_val"  value="300"/>
+	        	<column  name="tf005_c_dmn_des"  value="5 Minuti"/>
+	    </insert>		    		    	    
+
+  	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="D080"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="DOM"/>
+	        	<column  name="tf001_c_dom"  	 value="inter_chat_send_intervals"/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Invia messaggio ripetitivo personalizzato inter-chat dopo"/>
+	        	<column  name="tf001_t_sgr"  	 value="Se sono state definite più chat, intervallo di tempo dopo il quale il messaggio deve essere pubblicato nella chat successiva"/>
+	    </insert>  
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="inter_chat_send_intervals"/>
+	        	<column  name="tf005_c_dmn_val"  value="10"/>
+	        	<column  name="tf005_c_dmn_des"  value="10 Secondi"/>
+	    </insert>
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="inter_chat_send_intervals"/>
+	        	<column  name="tf005_c_dmn_val"  value="20"/>
+	        	<column  name="tf005_c_dmn_des"  value="20 Secondi"/>
+	    </insert>	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="inter_chat_send_intervals"/>
+	        	<column  name="tf005_c_dmn_val"  value="30"/>
+	        	<column  name="tf005_c_dmn_des"  value="30 Secondi"/>
+	    </insert>	
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="inter_chat_send_intervals"/>
+	        	<column  name="tf005_c_dmn_val"  value="40"/>
+	        	<column  name="tf005_c_dmn_des"  value="40 Secondi"/>
+	    </insert>
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="inter_chat_send_intervals"/>
+	        	<column  name="tf005_c_dmn_val"  value="50"/>
+	        	<column  name="tf005_c_dmn_des"  value="50 Secondi"/>
+	    </insert>
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="inter_chat_send_intervals"/>
+	        	<column  name="tf005_c_dmn_val"  value="60"/>
+	        	<column  name="tf005_c_dmn_des"  value="1 Minuto"/>
+	    </insert>	    	    	    
+	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="D090"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="BOL"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Segna come inviati i feed RSS al primo avvio"/>
+	        	<column  name="tf001_t_sgr"  	 value="Utile per evitare di inviare allo startup troppi messaggi"/>
+	    </insert>
+	   	
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="D100"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="TXT"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Pubblica i seguenti messaggi ordinati, separati dalla pipe, ogni tot secondi"/>
+	        	<column  name="tf001_t_sgr"  	 value="Messaggi pubblicati costantemente dopo un determinato numero di post"/>
+	    </insert>	
+	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="D110"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="NUM"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Pubblica i messaggi custom ogni x post"/>
+	        	<column  name="tf001_t_sgr"  	 value="Pubblica i messaggi costanti tot post"/>
+	    </insert>  
+	      
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="D120"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Intervallo in cui il Bot invia i messaggi in modalità silent"/>
+	        	<column  name="tf001_t_sgr"  	 value="es. 21:00:00-09:00:00"/>
+	    </insert>
+	      	    	      
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="D130"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Intervallo in cui il Bot invia i messaggi in modalità disabilitato"/>
+	        	<column  name="tf001_t_sgr"  	 value="es. 21:00:00-09:00:00"/>
+	    </insert>  
+	    
+	    <!-- Creazione del template che verrà clonato per ogni bot creato -->
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="SYS000"/>
+	        	<column  name="tf002_c_order"  	 value="0"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>	
+	    
+	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="D010"/>
+	        	<column  name="tf002_c_order"  	 value="1"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="D020"/>
+	        	<column  name="tf002_c_order"  	 value="2"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="D030"/>
+	        	<column  name="tf002_c_order"  	 value="3"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>	  
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="D040"/>
+	        	<column  name="tf002_c_order"  	 value="4"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="false"/>
+	    </insert>	  
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="D050"/>
+	        	<column  name="tf002_c_order"  	 value="5"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>	  
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="D060"/>
+	        	<column  name="tf002_c_order"  	 value="6"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>	  
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="D070"/>
+	        	<column  name="tf002_c_order"  	 value="7"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="D080"/>
+	        	<column  name="tf002_c_order"  	 value="8"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="false"/>
+	    </insert>	  
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="D090"/>
+	        	<column  name="tf002_c_order"  	 value="9"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>	  
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="D100"/>
+	        	<column  name="tf002_c_order"  	 value="10"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="false"/>
+	    </insert>	  	    
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="D110"/>
+	        	<column  name="tf002_c_order"  	 value="11"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="false"/>
+	    </insert>	  	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="D120"/>
+	        	<column  name="tf002_c_order"  	 value="12"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="false"/>
+	    </insert>
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="D130"/>
+	        	<column  name="tf002_c_order"  	 value="13"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="false"/>
+	    </insert>
+	    	    	    	    	    	    
+	<!-- ################################################################### -->
+	   <!-- ####################[ URL configuration ]##################### -->
+	<!-- ################################################################### -->
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="SYS010"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="SYSTEM"/>
+	        	<column  name="tf001_t_dmd"  	 value="Aggiornamento impostazioni URL"/>
+	        	<column  name="tf001_t_sgr"  	 value="Aggiornamento impostazioni URL"/>
+	    </insert>
+	<!-- Inserimento delle domande -->
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U000"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Nome fonte"/>
+	        	<column  name="tf001_t_sgr"  	 value="Nome della fonte"/>
+	    </insert>		
+	
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U010"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="BOL"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Abilita fonte"/>
+	        	<column  name="tf001_t_sgr"  	 value="Abilita la fonte"/>
+	    </insert>		  
+	      	
+	
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U020"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="URL"/>
+	        	<column  name="tf001_t_sgr"  	 value="Inserire la URL della fonte"/>
+	    </insert>	
+	    
+		
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U030"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="DOM"/>
+	        	<column  name="tf001_c_dom"  	 value="date_format"/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Formati data"/>
+	        	<column  name="tf001_t_sgr"  	 value="Formati della data del Fedd RSS separati da pipe. Es. E, dd MMM yyyy HH:mm:ss Z|E, d MMM yyyy HH:mm:ss Z"/>
+	    </insert>
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="date_format"/>
+	        	<column  name="tf005_c_dmn_val"  value="dd MMMM yyyy, HH:mm"/>
+	        	<column  name="tf005_c_dmn_des"  value="dd MMMM yyyy, HH:mm"/>
+	    </insert>
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="date_format"/>
+	        	<column  name="tf005_c_dmn_val"  value="E, dd MMM yyyy HH:mm:ss Z|E, d MMM yyyy HH:mm:ss Z"/>
+	        	<column  name="tf005_c_dmn_des"  value="E, dd MMM yyyy HH:mm:ss Z"/>
+	    </insert>	    
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="date_format"/>
+	        	<column  name="tf005_c_dmn_val"  value="yyyy-MM-dd'T'HH:mm:ss'Z'"/>
+	        	<column  name="tf005_c_dmn_des"  value="yyyy-MM-dd'T'HH:mm:ss'Z'"/>
+	    </insert>	    
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="date_format"/>
+	        	<column  name="tf005_c_dmn_val"  value="E, dd MMM yyyy HH:mm:ss 'GMT'|E, d MMM yyyy HH:mm:ss 'GMT'"/>
+	        	<column  name="tf005_c_dmn_des"  value="E, dd MMM yyyy HH:mm:ss 'GMT'"/>
+	    </insert>		    
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="date_format"/>
+	        	<column  name="tf005_c_dmn_val"  value="E, dd MMM yyyy HH:mm:ss 'Z'"/>
+	        	<column  name="tf005_c_dmn_des"  value="E, dd MMM yyyy HH:mm:ss 'Z'"/>
+	    </insert>	    
+	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U040"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="DOM"/>
+	        	<column  name="tf001_c_dom"  	 value="date_locale"/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Località data"/>
+	        	<column  name="tf001_t_sgr"  	 value="Località della data"/>
+	    </insert>	    	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="date_locale"/>
+	        	<column  name="tf005_c_dmn_val"  value="IT"/>
+	        	<column  name="tf005_c_dmn_des"  value="IT - Italia"/>
+	    </insert>
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf005_domini">  
+	        	<column  name="tf005_c_dmn"  	 value="date_locale"/>
+	        	<column  name="tf005_c_dmn_val"  value="UK"/>
+	        	<column  name="tf005_c_dmn_des"  value="UK - Gran Bretagna"/>
+	    </insert>	    
+	      
+	      
+	      
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U050"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="BOL"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Messaggio HTML"/>
+	        	<column  name="tf001_t_sgr"  	 value="Abilita l'invio di messaggi HTML"/>
+	    </insert>	      
+	      
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U060"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Prefisso titolo"/>
+	        	<column  name="tf001_t_sgr"  	 value="Prefisso del titolo"/>
+	    </insert>
+	      
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U070"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Prefisso messaggio"/>
+	        	<column  name="tf001_t_sgr"  	 value="Prefisso del messaggio"/>
+	    </insert>
+	    	    	      
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U080"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Prefisso link"/>
+	        	<column  name="tf001_t_sgr"  	 value="Prefisso del link"/>
+	    </insert>
+	    
+	    	    	      
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U090"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="BOL"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Mostra titolo"/>
+	        	<column  name="tf001_t_sgr"  	 value="Mostra titolo all'interno del messaggio"/>
+	    </insert>	    
+	    
+	    	    	      
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U100"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="BOL"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Mostra data"/>
+	        	<column  name="tf001_t_sgr"  	 value="Mostra data all'interno del messaggio"/>
+	    </insert>
+	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U110"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Icona della data"/>
+	        	<column  name="tf001_t_sgr"  	 value="Icona della data. Es. :date:"/>
+	    </insert>	    
+	    
+	    	    	      
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U120"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="BOL"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Mostra tag"/>
+	        	<column  name="tf001_t_sgr"  	 value="Mostra tag all'interno del messaggio"/>
+	    </insert>		    		    
+	    
+	    	    	      
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U130"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="BOL"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Mostra descrizione"/>
+	        	<column  name="tf001_t_sgr"  	 value="Mostra descrizione all'interno del messaggio"/>
+	    </insert>	
+	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U140"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="BOL"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Rimuovi tag HTML dalla descrizione"/>
+	        	<column  name="tf001_t_sgr"  	 value="Rimuovi tag HTML dalla descrizione"/>
+	    </insert>	    
+	    	    	      
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U150"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="BOL"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Mostra link"/>
+	        	<column  name="tf001_t_sgr"  	 value="Mostra link all'interno del messaggio"/>
+	    </insert>	
+	    
+	    
+	    	    	      
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U160"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="BOL"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Mostra sorgente"/>
+	        	<column  name="tf001_t_sgr"  	 value="Mostra sorgente all'interno del messaggio"/>
+	    </insert>	  
+	    	    	      
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U170"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Icona sorgente"/>
+	        	<column  name="tf001_t_sgr"  	 value="Mostra icona sorgente. Es. :globe_with_meridians:"/>
+	    </insert>	    
+	    
+	          	    	    
+	    	    	      
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U180"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Tag dei messaggi"/>
+	        	<column  name="tf001_t_sgr"  	 value="Tagga le seguenti parole chiave separate da pipe. Es. roma|milano"/>
+	    </insert>
+	    
+	    
+	    
+	    	    	      
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U190"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="BOL"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Mostra solo i post di oggi"/>
+	        	<column  name="tf001_t_sgr"  	 value="Mostra escludivamente i post di oggi"/>
+	    </insert>	
+	    
+	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U200"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Filtra per parole chiave"/>
+	        	<column  name="tf001_t_sgr"  	 value="Pubblica solo i post che contengono le seguenti parole chiave separate da pipe. Es. roma|milano"/>
+	    </insert>
+	    
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U210"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Filtra per link da escludere"/>
+	        	<column  name="tf001_t_sgr"  	 value="Pubblica solo i post che non contengono le seguenti fonti URL separate da pipe. Es. http://www.sito.com|http://www.sito.it"/>
+	    </insert>	   
+	    
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U220"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="DOM"/>
+	        	<column  name="tf001_c_dom"  	 value="date_format"/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Formato data del messaggio"/>
+	        	<column  name="tf001_t_sgr"  	 value="Formato della data del messaggio da pubblicare"/>
+	    </insert>	
+
+	    
+	   	<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U230"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="DOM"/>
+	        	<column  name="tf001_c_dom"  	 value="date_locale"/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Località della data"/>
+	        	<column  name="tf001_t_sgr"  	 value="Località ella data"/>
+	    </insert>		
+	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U240"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="BOL"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Abilita pubblicazione sintesi"/>
+	        	<column  name="tf001_t_sgr"  	 value="Abilita la pubblicazione di una sintesi dei post pubblicati"/>
+	    </insert>
+	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U250"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Orario di pubblicazione della sintesi"/>
+	        	<column  name="tf001_t_sgr"  	 value="Speciicare un orario di pubblicazione del messaggio di sintesi per la fonte. Es. 21:00:00"/>
+	    </insert>	 
+	    	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U260"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Messaggio introduttivo della sintesi"/>
+	        	<column  name="tf001_t_sgr"  	 value="Messaggio introduttivo della sintesi. Es. Summary #InBrief"/>
+	    </insert>
+	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U270"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Voce del link della sintesi"/>
+	        	<column  name="tf001_t_sgr"  	 value="Label dei link della sintesi. Es. Read more..."/>
+	    </insert>	    
+	       		      
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U280"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="BOL"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Abilita pulizia"/>
+	        	<column  name="tf001_t_sgr"  	 value="Abilita pulizia post obsoleti e già pubblicati"/>
+	    </insert>	   
+	    
+	       		      
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U290"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="NUM"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Anzianità in giorni dei post da elimianre"/>
+	        	<column  name="tf001_t_sgr"  	 value="Anzianità in giorni dei post da elimianre"/>
+	    </insert>	        		        
+	    
+	    
+	  	<!-- Creazione del template che verrà clonato per ogni bot creato -->
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="SYS010"/>
+	        	<column  name="tf002_c_order"  	 value="0"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>
+	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U000"/>
+	        	<column  name="tf002_c_order"  	 value="0"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>
+
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U010"/>
+	        	<column  name="tf002_c_order"  	 value="10"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>	
+
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U020"/>
+	        	<column  name="tf002_c_order"  	 value="20"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U030"/>
+	        	<column  name="tf002_c_order"  	 value="30"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U040"/>
+	        	<column  name="tf002_c_order"  	 value="40"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U050"/>
+	        	<column  name="tf002_c_order"  	 value="50"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U060"/>
+	        	<column  name="tf002_c_order"  	 value="60"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="false"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U070"/>
+	        	<column  name="tf002_c_order"  	 value="70"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="false"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U080"/>
+	        	<column  name="tf002_c_order"  	 value="80"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="false"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U090"/>
+	        	<column  name="tf002_c_order"  	 value="90"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U100"/>
+	        	<column  name="tf002_c_order"  	 value="100"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U110"/>
+	        	<column  name="tf002_c_order"  	 value="110"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="false"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U120"/>
+	        	<column  name="tf002_c_order"  	 value="120"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U130"/>
+	        	<column  name="tf002_c_order"  	 value="130"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U140"/>
+	        	<column  name="tf002_c_order"  	 value="140"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U150"/>
+	        	<column  name="tf002_c_order"  	 value="150"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U160"/>
+	        	<column  name="tf002_c_order"  	 value="160"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U170"/>
+	        	<column  name="tf002_c_order"  	 value="170"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="false"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U180"/>
+	        	<column  name="tf002_c_order"  	 value="180"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="false"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U190"/>
+	        	<column  name="tf002_c_order"  	 value="190"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U200"/>
+	        	<column  name="tf002_c_order"  	 value="200"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="false"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U210"/>
+	        	<column  name="tf002_c_order"  	 value="210"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="false"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U220"/>
+	        	<column  name="tf002_c_order"  	 value="220"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U230"/>
+	        	<column  name="tf002_c_order"  	 value="230"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U240"/>
+	        	<column  name="tf002_c_order"  	 value="240"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U250"/>
+	        	<column  name="tf002_c_order"  	 value="250"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="false"/>
+	    </insert>
+	    
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U260"/>
+	        	<column  name="tf002_c_order"  	 value="260"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="false"/>
+	    </insert>
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U270"/>
+	        	<column  name="tf002_c_order"  	 value="270"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="false"/>
+	    </insert>	   
+	     	    	    	    	    	    	    	    	    	    	    	    	    	    	    	    	    	    	    	    	    	    	    	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U280"/>
+	        	<column  name="tf002_c_order"  	 value="280"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>
+	    
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U290"/>
+	        	<column  name="tf002_c_order"  	 value="290"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="false"/>
+	    </insert>	    
+
+	</changeSet>
+	
+	
+	
+	<changeSet  author="andrei.dodu@hotmail.it"  id="CONFIG_INSERIMENTO_DOMANDE_BIS">  	
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U300"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="NUM"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Dimensione massima descrizione (in numero di caratteri)"/>
+	        	<column  name="tf001_t_sgr"  	 value="Es.250"/>
+	    </insert>  
+	    
+	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U300"/>
+	        	<column  name="tf002_c_order"  	 value="131"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>	
+	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U310"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Filtra per parole chiave che non devono essere contenute"/>
+	        	<column  name="tf001_t_sgr"  	 value="Pubblica solo i post che NON contengono le seguenti parole chiave separate da pipe. Es. roma|milano"/>
+	    </insert>	
+	    
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U310"/>
+	        	<column  name="tf002_c_order"  	 value="201"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="false"/>
+	    </insert>	     
+	    
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U320"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="BOL"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Salva l'impronta dei dati invece dei dati"/>
+	        	<column  name="tf001_t_sgr"  	 value="Salva hashing"/>
+	    </insert>	    
+	   	<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U320"/>
+	        	<column  name="tf002_c_order"  	 value="320"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>	
+	    
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="U330"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="BOL"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Abilita modalità spericmentale"/>
+	        	<column  name="tf001_t_sgr"  	 value="Abilita experimental mode"/>
+	    </insert>	    
+	   	<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="url_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="U330"/>
+	        	<column  name="tf002_c_order"  	 value="330"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>		    
+	    
+	    <!-- ######################################################################################à -->
+	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="D140"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Percorso di salvataggio dei messaggi provenienti dagli utenti"/>
+	        	<column  name="tf001_t_sgr"  	 value="Percorso di salvataggio. Es. /tmp/test"/>
+	    </insert>	
+	   	<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="D140"/>
+	        	<column  name="tf002_c_order"  	 value="140"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>
+	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="D150"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Messaggio di benvenuto"/>
+	        	<column  name="tf001_t_sgr"  	 value="Messaggio di benvenuto"/>
+	    </insert>	
+	   	<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="D150"/>
+	        	<column  name="tf002_c_order"  	 value="150"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>	
+	    
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="D160"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Messaggio di ringraziameno"/>
+	        	<column  name="tf001_t_sgr"  	 value="Messaggio di ringraziameno"/>
+	    </insert>	
+	   	<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="D160"/>
+	        	<column  name="tf002_c_order"  	 value="160"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>	     
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="D170"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="BOL"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Is on update received disabled"/>
+	        	<column  name="tf001_t_sgr"  	 value="Is on update received disabled"/>
+	    </insert>	    
+	   	<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="D170"/>
+	        	<column  name="tf002_c_order"  	 value="170"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>		
+	    
+	    
+
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="D180"/>
+	        	<column  name="tf001_c_dmd_grp"  value="messaggio"/>
+	        	<column  name="tf001_c_fmt"  	 value="BOL"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Abilita modalità spericmentale"/>
+	        	<column  name="tf001_t_sgr"  	 value="Abilita experimental mode"/>
+	    </insert>	    
+	   	<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="D180"/>
+	        	<column  name="tf002_c_order"  	 value="180"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>	           		        
+	</changeSet>
+	
+	
+	<changeSet id="DOMANDA_AGG_BOT_E_URL" author="andrei.dodu@hotmail.it">
+	 <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="SYS020"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="STR"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="SYSTEM"/>
+	        	<column  name="tf001_t_dmd"  	 value="Aggiornamento impostazioni bot e url"/>
+	        	<column  name="tf001_t_sgr"  	 value="Aggiornamento impostazioni bot e url"/>
+	    </insert>
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="SYS020"/>
+	        	<column  name="tf002_c_order"  	 value="0"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>	
+	 </changeSet>
+	 
+	 
+	 <changeSet id="DOMANDA_AGG_BOT_RELOAD_CONFIGURATION" author="andrei.dodu@hotmail.it">
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf001_domande">  
+	        	<column  name="tf001_c_dmd"  	 value="D000"/>
+	        	<column  name="tf001_c_dmd_grp"  value=""/>
+	        	<column  name="tf001_c_fmt"  	 value="BOL"/>
+	        	<column  name="tf001_c_dom"  	 value=""/>
+	        	<column  name="tf001_c_type"  	 value="ORDINARY"/>
+	        	<column  name="tf001_t_dmd"  	 value="Ricarica bot in caso di eccezioni"/>
+	        	<column  name="tf001_t_sgr"  	 value="Ricarica bot in caso di eccezioni"/>
+	    </insert>
+		<insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}"  
+	            tableName="tf002_qst_templates">  
+	        	<column  name="tf002_c_tmplt"  	 value="bot_configuration"/>
+	        	<column  name="tf001_c_dmd" 	 value="D000"/>
+	        	<column  name="tf002_c_order"  	 value="0"/>
+	        	<column  name="tf002_f_obl"  	 valueBoolean="true"/>
+	    </insert>	
+	 </changeSet>
+	
+</databaseChangeLog>

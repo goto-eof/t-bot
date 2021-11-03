@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	
+	<changeSet id="create_table_tc001_post" author="andrei.dodu@hotmail.it" dbms="${dbms}">
+		<createTable tableName="tc001_post" schemaName="${schemaName}">
+			<column autoIncrement="${autoIncrement}" name="tc001_post_seq" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"	primaryKeyName="pk_tc001_post_seq" />
+			</column>
+			<column name="tc001_title" type="VARCHAR(45)"/>
+			<column name="tc001_description" type="VARCHAR(45)"/>
+			<column name="tc001_link" type="VARCHAR(45)"/>
+			<column name="tc001_date" type="VARCHAR(45)"/>
+			<column name="tc001_hash" type="VARCHAR(45)"/>
+			<column name="tp003_url_config_seq" type="BIGINT" />
+			<column name="insert_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="update_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="version" type="INT" />
+		</createTable>
+		<addForeignKeyConstraint
+			baseColumnNames="tp003_url_config_seq" baseTableName="tc001_post"
+			constraintName="fk_tc001_post" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="tp003_url_config_seq"
+			referencedTableName="tp003_url_config" />
+		<addUniqueConstraint columnNames="tc001_date,tc001_description,tc001_link,tc001_title,tp003_url_config_seq" 
+							 constraintName="unique_tc001_post" 
+							 tableName="tc001_post"/>
+	</changeSet>
+	
+	<changeSet id="create_table_tc002_url_status" author="andrei.dodu@hotmail.it" dbms="${dbms}">
+		<createTable tableName="tc002_url_status" schemaName="${schemaName}">
+			<column autoIncrement="${autoIncrement}" name="tc002_url_status_seq" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"	primaryKeyName="pk_tc002_url_status_seq" />
+			</column>
+			<column name="tc002_name" type="VARCHAR(45)"/>
+			<column name="tc002_value" type="VARCHAR(45)"/>
+			<column name="tp003_url_config_seq" type="BIGINT" />
+			<column name="insert_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="update_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="version" type="INT" />
+		</createTable>
+		<addForeignKeyConstraint
+			baseColumnNames="tc002_url_status_seq" baseTableName="tc002_url_status"
+			constraintName="fk_tc002_url_status" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="tp003_url_config_seq"
+			referencedTableName="tp003_url_config" />		
+		<addUniqueConstraint columnNames="tc002_name,tp003_url_config_seq" constraintName="unique_tc002_url_status" tableName="tc002_url_status"/>
+	</changeSet>	
+	
+	
+	<changeSet id="create_table_tc003_message" author="andrei.dodu@hotmail.it" dbms="${dbms}">
+		<createTable tableName="tc003_message" schemaName="${schemaName}">
+			<column autoIncrement="${autoIncrement}" name="tc003_message_seq" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"	primaryKeyName="pk_tc003_message_seq" />
+			</column>
+			<column name="tc003_message" type="VARCHAR(45)"/>
+			<column name="tc003_name" type="VARCHAR(45)"/>
+			<column name="tc003_surname" type="VARCHAR(45)"/>
+			<column name="tc003_user_id" type="VARCHAR(45)"/>
+			<column name="tc003_username" type="VARCHAR(45)"/>
+			<column name="tp001_bot_config_seq" type="BIGINT" />
+			<column name="insert_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="update_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />			
+			<column name="version" type="INT" />
+		</createTable>
+		<addForeignKeyConstraint
+			baseColumnNames="tp001_bot_config_seq" baseTableName="tc003_message"
+			constraintName="fk_tc003_message" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="tp001_bot_config_seq"
+			referencedTableName="tp001_bot_config" />		
+	</changeSet>
+	
+	
+	<changeSet id="create_table_tc004_bot_status" author="andrei.dodu@hotmail.it" dbms="${dbms}">
+		<createTable tableName="tc004_bot_status" schemaName="${schemaName}">
+			<column autoIncrement="${autoIncrement}" name="tc004_bot_status_seq" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"	primaryKeyName="pk_tc004_bot_status_seq" />
+			</column>
+			<column name="tc004_name" type="VARCHAR(45)"/>
+			<column name="tc004_value" type="VARCHAR(45)"/>
+			<column name="tp001_bot_config_seq" type="BIGINT" />
+			<column name="insert_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="update_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="version" type="INT" />
+		</createTable>
+		<addForeignKeyConstraint
+			baseColumnNames="tp001_bot_config_seq" baseTableName="tc004_bot_status"
+			constraintName="fk_tc004_bot_status" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="tp001_bot_config_seq"
+			referencedTableName="tp001_bot_config" />		
+		<addUniqueConstraint columnNames="tc004_name,tp001_bot_config_seq" constraintName="unique_tc004_bot_status" tableName="tc004_bot_status"/>
+	</changeSet>		
+
+</databaseChangeLog>

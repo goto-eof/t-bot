@@ -1,0 +1,40 @@
+server:
+  port: 8081
+  servlet:
+    contextPath: /t-bot-manager
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tbot?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Rome
+    username: tbot
+    password: password
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: false    
+application:
+  configuration:
+      baseUrls:
+        botConfig: /t-bot-manager/bot-configuration
+        urlConfig: /t-bot-manager/url-configuration
+      daemon:
+        logging:
+          file: 
+            name: ${logging.file.path}/system.log
+        
+logging:
+  file:
+    path: /tbot-logs
+    name: ${logging.file.path}/web.log
+  level:
+    org.andreidodu: DEBUG
+    root: INFO
+    com.apptastic: DEBUG
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"  

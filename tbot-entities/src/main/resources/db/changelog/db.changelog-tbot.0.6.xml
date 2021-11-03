@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+	<changeSet id="create_table_tc001_post" author="andrei.dodu@hotmail.it" dbms="${dbms}">
+		<createTable tableName="tc001_post" schemaName="${schemaName}">
+			<column autoIncrement="${autoIncrement}" name="tc001_post_seq" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"	primaryKeyName="pk_tc001_post_seq" />
+			</column>
+			<column name="tc001_title" type="VARCHAR(45)"/>
+			<column name="tc001_description" type="VARCHAR(45)"/>
+			<column name="tc001_link" type="VARCHAR(45)"/>
+			<column name="tc001_date" type="VARCHAR(45)"/>
+			<column name="tc001_hash" type="VARCHAR(45)"/>
+			<column name="tf006_bot_qst_seq" type="BIGINT" />
+			<column name="insert_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="update_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="version" type="INT" />
+		</createTable>
+		<addForeignKeyConstraint
+			baseColumnNames="tf006_bot_qst_seq" baseTableName="tc001_post"
+			constraintName="fk_tc001_post" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="tf006_bot_qst_seq"
+			referencedTableName="tf006_bot_qst" />
+		<addUniqueConstraint columnNames="tc001_date,tc001_description,tc001_link,tc001_title,tf006_bot_qst_seq" 
+							 constraintName="unique_tc001_post" 
+							 tableName="tc001_post"/>
+	</changeSet>
+	
+	<changeSet id="create_table_tc002_bot_qst_status" author="andrei.dodu@hotmail.it" dbms="${dbms}">
+		<createTable tableName="tc002_bot_qst_status" schemaName="${schemaName}">
+			<column autoIncrement="${autoIncrement}" name="tc002_bot_qst_status_seq" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"	primaryKeyName="pk_tc002_bot_qst_status_seq" />
+			</column>
+			<column name="tc002_key" type="VARCHAR(45)"/>
+			<column name="tc002_value" type="VARCHAR(45)"/>
+			<column name="tf006_bot_qst_seq" type="BIGINT" />
+			<column name="insert_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="update_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="version" type="INT" />
+		</createTable>
+		<addForeignKeyConstraint
+			baseColumnNames="tf006_bot_qst_seq" baseTableName="tc002_bot_qst_status"
+			constraintName="fk_tc002_bot_qst_status" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="tf006_bot_qst_seq"
+			referencedTableName="tf006_bot_qst" />		
+		<addUniqueConstraint columnNames="tc002_key,tf006_bot_qst_seq" constraintName="unique_tc002_bot_qst_status" tableName="tc002_bot_qst_status"/>
+	</changeSet>	
+	
+	
+	<changeSet id="remove_unique_tc001_post" author="andrei.dodu@hotmail.it" dbms="${dbms}">
+	    <dropUniqueConstraint  catalogName="${schemaName}"  
+            constraintName="unique_tc001_post"  
+            schemaName="${schemaName}"  
+            tableName="tc001_post"  
+            uniqueColumns="tc001_date,tc001_description,tc001_link,tc001_title,tf006_bot_qst_seq"/> 
+        <addUniqueConstraint columnNames="tc001_hash" 
+							 constraintName="unique_tc001_post" 
+							 tableName="tc001_post"/>
+    </changeSet>
+	
+</databaseChangeLog>
