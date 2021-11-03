@@ -1,0 +1,43 @@
+<div [formGroup]="form">
+
+  <mat-slide-toggle class="w-100 mt-4" *ngIf="domanda.formato==='BOL'" color="primary" [(ngModel)]="domanda.valore"
+                    [name]="domanda.id" [formControl]="formControl">
+    <span *ngIf="debug" [className]="debugClass">[{{domanda.id}}] </span>{{domanda.testo}}
+  </mat-slide-toggle>
+
+  <mat-form-field class="w-100 mt-4" *ngIf="domanda.formato === 'STR'" appearance="legacy">
+    <mat-label><span *ngIf="debug" [className]="debugClass">[{{domanda.id}}] </span>{{domanda.testo}}</mat-label>
+    <mat-icon matSuffix>edit</mat-icon>
+    <input matInput [(ngModel)]="domanda.valore" [required]="domanda.obbligatorio" [name]="domanda.id"
+            [formControl]="formControl">
+    <mat-hint>{{domanda.suggerimento}}</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field class="w-100 mt-4" *ngIf="domanda.formato === 'NUM'" appearance="legacy">
+    <mat-label><span *ngIf="debug" [className]="debugClass">[{{domanda.id}}] </span>{{domanda.testo}}</mat-label>
+    <mat-icon matSuffix>calculate</mat-icon>
+    <input matInput type="number" [(ngModel)]="domanda.valore" [required]="domanda.obbligatorio" [name]="domanda.id"
+            [formControl]="formControl">
+    <mat-hint>{{domanda.suggerimento}}</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field class="w-100 mt-4" *ngIf="domanda.formato === 'TXT'" appearance="legacy">
+    <mat-label><span *ngIf="debug" [className]="debugClass">[{{domanda.id}}] </span>{{domanda.testo}}</mat-label>
+    <mat-icon matSuffix>text_snippet</mat-icon>
+    <textarea matInput [(ngModel)]="domanda.valore" [required]="domanda.obbligatorio" [name]="domanda.id"
+               [formControl]="formControl"></textarea>
+    <mat-hint>{{domanda.suggerimento}}</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field class="w-100 mt-4" *ngIf="domanda.formato === 'DOM'">
+    <mat-label><span *ngIf="debug" [className]="debugClass">[{{domanda.id}}] </span>{{domanda.testo}}</mat-label>
+    <mat-select placeholder="{{domanda.testo}}" [(ngModel)]="domanda.valore" (selectionChange)="logga(domanda)"
+
+                [required]="domanda.obbligatorio" [formControl]="formControl">
+      <mat-option *ngFor="let dom of domanda.dominio" [value]="dom.valoreDominio">
+        {{dom.descrizione}}
+      </mat-option>
+    </mat-select>
+    <mat-hint>{{domanda.suggerimento}}</mat-hint>
+  </mat-form-field>
+</div>
