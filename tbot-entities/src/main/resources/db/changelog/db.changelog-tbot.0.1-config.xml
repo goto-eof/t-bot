@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	
+	<changeSet id="create_table_tp001_bot_config" author="andrei.dodu@hotmail.it" dbms="${dbms}">
+		<createTable tableName="tp001_bot_config" schemaName="${schemaName}">
+			<column autoIncrement="${autoIncrement}" name="tp001_bot_config_seq" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"	primaryKeyName="pk_tp001_bot_config_seq" />
+			</column>
+			<column name="tp001_name" type="VARCHAR(128)"/>
+			<column name="tp001_enabled" type="BOOLEAN"	 />
+			<column name="insert_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="update_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />				
+			<column name="version" type="INT" />
+		</createTable>
+		<addUniqueConstraint columnNames="tp001_name" constraintName="unique_tp001_name" tableName="tp001_bot_config"/>
+	</changeSet>
+	
+	<changeSet id="create_table_tp002_bot_global_config" author="andrei.dodu@hotmail.it" dbms="${dbms}">
+		<createTable tableName="tp002_bot_global_config" schemaName="${schemaName}">
+			<column autoIncrement="${autoIncrement}" name="tp002_bot_global_config_seq" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"	primaryKeyName="pk_tp002_bot_global_config_seq" />
+			</column>
+			<column name="tp002_key" type="VARCHAR(255)"/>
+			<column name="tp002_value" type="${clob}"	 />
+			<column name="insert_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="update_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />				
+			<column name="version" type="INT" />
+		</createTable>
+		<addUniqueConstraint columnNames="tp002_key" constraintName="unique_tp002_bot_global_config" tableName="tp002_bot_global_config"/>
+	</changeSet>
+	
+	<changeSet id="create_table_tp003_url_config" author="andrei.dodu@hotmail.it" dbms="${dbms}">
+		<createTable tableName="tp003_url_config" schemaName="${schemaName}">
+			<column autoIncrement="${autoIncrement}" name="tp003_url_config_seq" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"	primaryKeyName="pk_tp003_url_config" />
+			</column>
+			<column name="tp003_link" type="VARCHAR(255)"/>
+			<column name="tp001_bot_config_seq" type="BIGINT"	 />
+			<column name="insert_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="update_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />				
+			<column name="version" type="INT" />
+		</createTable>
+		<addForeignKeyConstraint
+			baseColumnNames="tp001_bot_config_seq" baseTableName="tp003_url_config"
+			constraintName="fk_tp003_url_config" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="tp001_bot_config_seq"
+			referencedTableName="tp001_bot_config" />
+		<addUniqueConstraint columnNames="tp001_bot_config_seq,tp003_link" constraintName="unique_tp003_url_config" tableName="tp003_url_config"/>
+	</changeSet>
+		
+	<changeSet id="create_table_tp004_url_config_kv" author="andrei.dodu@hotmail.it" dbms="${dbms}">
+		<createTable tableName="tp004_url_config_kv" schemaName="${schemaName}">
+			<column autoIncrement="${autoIncrement}" name="tp004_url_config_kv_seq" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"	primaryKeyName="pk_tp004_url_config_kv_seq" />
+			</column>
+			<column name="tp004_key" type="VARCHAR(255)"/>
+			<column name="tp004_value" type="${clob}"/>
+			<column name="tp003_url_config_seq" type="BIGINT" />
+			<column name="insert_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="update_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />				
+			<column name="version" type="INT" />
+		</createTable>
+		<addForeignKeyConstraint
+			baseColumnNames="tp003_url_config_seq" baseTableName="tp004_url_config_kv"
+			constraintName="fk_tp004_url_config_kv" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="tp003_url_config_seq"
+			referencedTableName="tp003_url_config" />
+		<addUniqueConstraint columnNames="tp004_key,tp003_url_config_seq" constraintName="unique_tp004_url_config_kv" tableName="tp004_url_config_kv"/>
+	</changeSet>
+	
+	<changeSet id="create_tp005_bot_config_kv" author="andrei.dodu@hotmail.it" dbms="${dbms}">
+		<createTable tableName="tp005_bot_config_kv" schemaName="${schemaName}">
+			<column autoIncrement="${autoIncrement}" name="tp005_bot_config_kv_seq" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"	primaryKeyName="pk_tp005_bot_config_kv_seq" />
+			</column>
+			<column name="tp005_key" type="VARCHAR(256)"/>
+			<column name="tp005_value" type="${clob}"/>
+			<column name="tp001_bot_config_seq" type="BIGINT"	 />
+			<column name="insert_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="update_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />				
+			<column name="version" type="INT" />
+		</createTable>
+		<addForeignKeyConstraint
+			baseColumnNames="tp001_bot_config_seq" baseTableName="tp005_bot_config_kv"
+			constraintName="fk_tp005_bot_config_kv" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="tp001_bot_config_seq"
+			referencedTableName="tp001_bot_config" />
+		<addUniqueConstraint columnNames="tp005_key,tp001_bot_config_seq" constraintName="unique_tp005_bot_config_kv" tableName="tp005_bot_config_kv"/>
+	</changeSet>
+
+</databaseChangeLog>

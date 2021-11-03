@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	
+	<changeSet id="create_table_bot_qst" author="andrei.dodu@hotmail.it" dbms="${dbms}">
+		<createTable tableName="tf006_bot_qst" schemaName="${schemaName}">
+			<column autoIncrement="${autoIncrement}" name="tf006_bot_qst_seq" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"	primaryKeyName="pk_tf006_bot_qst" />
+			</column>
+			<column name="tf006_c_bot"   type="VARCHAR(255)"/>
+			<column name="tf003_c_qst"   type="VARCHAR(255)"/>
+			<column name="tf002_c_tmplt" type="VARCHAR(255)"/>
+			<column name="insert_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="update_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="version" type="INT" />
+		</createTable>
+		<addUniqueConstraint columnNames="tf006_c_bot,tf003_c_qst" 
+							 constraintName="unique_tf006_bot_qst" 
+							 tableName="tf006_bot_qst"/>
+	</changeSet>	
+	
+</databaseChangeLog>

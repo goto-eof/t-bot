@@ -1,0 +1,7 @@
+<div class="w-75 m-auto" #element>
+  <h1 class="text-center">Log <span *ngIf="menuStatusDTO.menuGroup === 0">Globali</span><span *ngIf="menuStatusDTO.menuGroup === 1">del bot <em>{{botWrapper.selectedBot._nome}}</em></span></h1>
+  <p class="text-center" *ngIf="menuStatusDTO.menuGroup === 1">{{botWrapper.selectedBot._descrizione}}</p>
+  <div class="log-container">
+    <div class="row" *ngFor="let log of logsView"><span>{{log.content}}</span></div>
+  </div>
+</div>

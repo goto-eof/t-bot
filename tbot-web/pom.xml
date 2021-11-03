@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>tbot-parent</artifactId>
+		<groupId>it.dodu</groupId>
+		<version>1.0</version>
+		<relativePath>../tbot/pom.xml</relativePath>
+	</parent>
+	<artifactId>tbot-web</artifactId>
+	<name>tbot-web</name>
+	<description>TBot Web Manager</description>
+	<url>http://www.dodu.it</url>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<filename>tbot-web</filename>
+		<start-class>org.andreidodu.tbot.TbotManagerApplication</start-class>
+		<node.version>v14.4.0</node.version>
+		<npm.version>6.14.5</npm.version>
+		<context.path>/t-bot-manager/</context.path>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>it.dodu</groupId>
+			<artifactId>tbot-application</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>2.5.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<version>2.5.4</version>
+			<optional>true</optional>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<finalName>${filename}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>org.andreidodu.tbot.TbotManagerApplication</mainClass>
+				</configuration>
+			</plugin>
+			<!-- Do not generate source jar -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<configuration>
+					<skipSource>true</skipSource>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.github.eirslett</groupId>
+				<artifactId>frontend-maven-plugin</artifactId>
+				<version>0.0.28</version>
+				<configuration>
+					<nodeVersion>${node.version}</nodeVersion>
+					<npmVersion>${npm.version}</npmVersion>
+					<nodeDownloadRoot>http://nodejs.org/dist/</nodeDownloadRoot>
+					<npmDownloadRoot>http://registry.npmjs.org/npm/-/</npmDownloadRoot>
+					<installDirectory>target/webapp</installDirectory>
+					<workingDirectory>src/main/tbot-web/src</workingDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<id>install node and npm</id>
+						<goals>
+							<goal>install-node-and-npm</goal>
+						</goals>
+						<phase>generate-resources</phase>
+					</execution>
+					<execution>
+						<id>npm install</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+							<arguments>ci --loglevel=error</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>build</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<configuration>
+							<arguments>run build -- --prod --base-href ${context.path}</arguments>
+						</configuration>
+						<phase>generate-resources</phase>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh</artifactId>
+				<version>3.0.0</version>
+			</extension>
+		</extensions>
+	</build>
+</project>

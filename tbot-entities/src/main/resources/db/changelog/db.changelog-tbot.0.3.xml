@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	
+	<changeSet id="create_table_domande" author="andrei.dodu@hotmail.it" dbms="${dbms}">
+		<createTable tableName="tf001_domande" schemaName="${schemaName}">
+			<column name="tf001_c_dmd" type="VARCHAR(255)">
+				<constraints nullable="false" primaryKey="true"	primaryKeyName="pk_tf001_domande" />
+			</column>
+			<column name="tf001_c_dmd_grp" type="VARCHAR(255)"/>
+			<column name="tf001_c_fmt" type="VARCHAR(45)"/>
+			<column name="tf001_c_dom" type="VARCHAR(255)"/>
+			<column name="tf001_t_dmd" type="VARCHAR(255)"/>
+			<column name="tf001_c_type" type="VARCHAR(255)"/>
+			<!-- suggerimento -->
+			<column name="tf001_t_sgr" type="VARCHAR(255)"/>
+			<column name="insert_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="update_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="version" type="INT" />
+		</createTable>
+	</changeSet>
+	
+	
+	
+	<changeSet id="create_table_questionario_template" author="andrei.dodu@hotmail.it" dbms="${dbms}">
+		<createTable tableName="tf002_qst_templates" schemaName="${schemaName}">
+			<column autoIncrement="${autoIncrement}" name="tf002_qst_templates_seq" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"	primaryKeyName="pk_tf002_qst_templates_seq" />
+			</column>
+			<column name="tf002_c_tmplt" type="VARCHAR(255)"/>
+			<column name="tf001_c_dmd" type="VARCHAR(255)"/>
+			<column name="tf002_c_order" type="BIGINT"/>
+			<column name="tf002_f_obl" type="BOOLEAN"/>
+			<column name="insert_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="update_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="version" type="INT" />
+		</createTable>
+		<addUniqueConstraint columnNames="tf002_c_tmplt,tf001_c_dmd" 
+							 constraintName="unique_tf002_qst_templates" 
+							 tableName="tf002_qst_templates"/>
+		<addForeignKeyConstraint
+			baseColumnNames="tf001_c_dmd" baseTableName="tf002_qst_templates"
+			constraintName="fk_tf002_qst_templates" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="tf001_c_dmd"
+			referencedTableName="tf001_domande" />
+	</changeSet>	
+	
+	
+		
+	<changeSet id="create_table_questionario" author="andrei.dodu@hotmail.it" dbms="${dbms}">
+		<createTable tableName="tf003_qst" schemaName="${schemaName}">
+			<column autoIncrement="${autoIncrement}" name="tf003_qst_seq" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"	primaryKeyName="pk_tf003_qst" />
+			</column>
+			<column name="tf003_c_qst" type="VARCHAR(255)"/>
+			<column name="tf002_c_tmplt" type="VARCHAR(255)"/>
+			<column name="tf001_c_dmd" type="VARCHAR(255)"/>
+			<column name="insert_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="update_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="version" type="INT" />
+		</createTable>
+		<addUniqueConstraint columnNames="tf002_c_tmplt,tf001_c_dmd,tf003_c_qst" 
+							 constraintName="unique_tf003_qst" 
+							 tableName="tf003_qst"/>
+		<addForeignKeyConstraint
+			baseColumnNames="tf002_c_tmplt,tf001_c_dmd" baseTableName="tf003_qst"
+			constraintName="fk_tf003_qst" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="tf002_c_tmplt,tf001_c_dmd"
+			referencedTableName="tf002_qst_templates" />
+	</changeSet>
+	
+	
+	
+	<changeSet id="create_table_risposte" author="andrei.dodu@hotmail.it" dbms="${dbms}">
+		<createTable tableName="tf004_risposte" schemaName="${schemaName}">
+			<column autoIncrement="${autoIncrement}" name="tf004_risposte_seq" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"	primaryKeyName="pk_tf004_risposte" />
+			</column>
+			<column name="tf003_c_qst" type="VARCHAR(255)"/>
+			<column name="tf001_c_dmd" type="VARCHAR(255)"/>
+			<column name="tf004_t_rsp" type="BLOB"/>
+			<column name="tf004_s_rsp" type="VARCHAR(255)"/>
+			<column name="tf004_n_rsp" type="BIGINT"/>
+			<column name="insert_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="update_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="version" type="INT" />
+		</createTable>
+		<addUniqueConstraint columnNames="tf003_c_qst,tf001_c_dmd" 
+							 constraintName="unique_tf004_risposte" 
+							 tableName="tf004_risposte"/>
+		<addForeignKeyConstraint
+			baseColumnNames="tf001_c_dmd" baseTableName="tf004_risposte"
+			constraintName="fk_tf004_risposte" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="tf001_c_dmd"
+			referencedTableName="tf001_domande" />							 
+	</changeSet>
+	
+	
+
+	<changeSet id="create_table_domini" author="andrei.dodu@hotmail.it" dbms="${dbms}">
+		<createTable tableName="tf005_domini" schemaName="${schemaName}">
+			<column name="tf005_c_dmn" type="VARCHAR(255)"/>
+			<column name="tf005_c_dmn_val" type="VARCHAR(255)"/>
+			<column name="tf005_c_dmn_des" type="VARCHAR(255)"/>
+			<column name="insert_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="update_date" type="DATETIME" defaultValueComputed="${defaultTimestamp}" />
+			<column name="version" type="INT" />
+		</createTable>
+		<addPrimaryKey columnNames="tf005_c_dmn,tf005_c_dmn_val"
+                   constraintName="PK_tf005_domini"
+                   tableName="tf005_domini" />
+	</changeSet>	
+	
+</databaseChangeLog>

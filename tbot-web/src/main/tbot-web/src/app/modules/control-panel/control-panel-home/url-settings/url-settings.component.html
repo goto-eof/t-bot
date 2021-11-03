@@ -1,0 +1,13 @@
+<div>
+  <h1>{{urlName}}</h1>
+  <form [formGroup]="myForm">
+    <app-form-input *ngFor="let domanda of url.caratteristiche" [domanda]="domanda" [form]="myForm"></app-form-input>
+    <button class="btn btn-success mt-3 w-25 float-right" (click)="salvaEAggiornaConfigurazioneEVaiAllaHomeDelBot(url)"
+            [disabled]="isFormInvalidCalculator()">
+      Salva & Aggiorna
+    </button>
+    <button class="btn btn-primary mt-3 w-25 float-right mr-3" (click)="salvaEVaiAllaHomeDelBot(url)"
+            [disabled]="isFormInvalidCalculator()">Salva
+    </button>
+  </form>
+</div>

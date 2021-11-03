@@ -1,0 +1,142 @@
+<mat-sidenav-container>
+
+  <mat-sidenav #drawer fixedInViewport="true" [mode]="drawer" [opened]="false" class="menu">
+    <mat-toolbar color="primary" class="w-100 justify-content-between theme-color">
+      <span class="d-flex"><mat-icon class="mr-2">settings</mat-icon> Menu | T-Bot Manager</span>
+      <button class="btn btn-primary d-flex" href="#" (click)="drawer.close()">Chiudi</button>
+    </mat-toolbar>
+    <mat-drawer-container class="w-100 h-90 flex-wrap">
+
+      <mat-drawer #drawer class="sidenav flex-column text-light" mode="side"
+                  [opened]="isMenuOpened" role="navigation">
+
+
+        <button class="btn btn-warning mb-2 w-100" (click)="goToLog()"><i class="fa fa-history"></i> Global log</button>
+
+        <button class="btn btn-success mb-2 w-100" (click)="newBot()"><i class="fa fa-plus"></i> Nuovo bot</button>
+
+        <mat-card *ngFor="let bot of botWrapper.bots; index as i"
+                  class="menu-item-wrapper {{bot === botWrapper.selectedBot ? 'rounded selected' : ''}}">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"><i class="fa fa-android"></i></div>
+            <mat-card-title class="color-white">{{retrieveBotName(bot)}}</mat-card-title>
+            <mat-card-subtitle class="color-white">{{retrieveBotDescription(bot)}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+
+            <button class="btn btn-success menu-button w-100" (click)="edit(bot)">
+              <i class="fa fa-android"></i>
+              <span class="ml-1"> Modifica</span>
+            </button>
+
+          </mat-card-content>
+          <mat-card-actions class="p-2">
+
+            <button mat-button (click)="removeBot(bot)" class="w-50 menu-button text-center btn btn-link">
+              <i class="fa fa-minus-circle"></i>
+              <span class="ml-1"> Rimuovi Bot</span>
+            </button>
+
+
+            <button mat-button (click)="newUrl(bot)" class="w-50 menu-button text-center btn btn-link">
+              <i class="fa fa-plus-circle"></i>
+              <span class="ml-1"> Aggiungi URL</span>
+            </button>
+
+          </mat-card-actions>
+        </mat-card>
+
+
+      </mat-drawer>
+
+
+    </mat-drawer-container>
+    <p class="text-right mr-3"><em>({{isProduction === true ? 'Prod' : 'Test'}} v.3.0)</em></p>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar class="theme-color">
+      <button
+        type="button"
+        class="brn btn-success"
+        style="border-radius: 10%;"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.open()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="p-1"></span>
+      <span>T-Bot Manager</span>
+    </mat-toolbar>
+
+
+    <div class="web-content">
+
+
+      <mat-tab-group mat-align-tabs="start" class="mt-0"
+                     *ngIf="isBotSelected(botWrapper.selectedBot) && this.menuStatusDTO.menuGroup===1"
+                     (selectedIndexChange)="selectedIndexChangeMainTabs($event)"
+                     [selectedIndex]="selectedIndex">
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <i class="fa fa-home mr-1"></i> Info sul Bot
+          </ng-template>
+          <app-bot-info [botWrapper]="botWrapper"></app-bot-info>
+        </mat-tab>
+
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <i class="fa fa-cogs mr-1"></i> Impostazioni Bot
+          </ng-template>
+          <app-bot-settings [bot]="botWrapper.selectedBot"></app-bot-settings>
+        </mat-tab>
+
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <i class="fa fa-globe mr-1"></i> URLs
+          </ng-template>
+          <h1 class="text-center">URL del Bot <em>{{botWrapper.selectedBot._nome}}</em></h1>
+          <p class="text-center">{{botWrapper.selectedBot._descrizione}}</p>
+          <mat-tab-group mat-align-tabs="start" class="mt-0  p-4 flex-column"
+                         *ngIf="isBotSelected(botWrapper.selectedBot)"
+                         (selectedIndexChange)="selectedIndexChangeUrl($event)"
+                         [selectedIndex]="menuStatusDTO.selectedIndexUrl">
+
+            <mat-tab *ngFor="let url of botWrapper.selectedBot.urls">
+              <ng-template mat-tab-label>
+                <i class="fa fa-anchor mr-1"></i> {{url._name}}
+              </ng-template>
+              <div class="w-75 m-auto pt-5">
+                <app-url-settings [selectedBot]="botWrapper.selectedBot" [url]="url"></app-url-settings>
+                <button class="btn btn-danger w-25 text-center mt-1" (click)="removeUrl(botWrapper.selectedBot, url)">
+                  <i class="fa fa-trash"></i> <span class="ml-1"> Elimina URL</span>
+                </button>
+              </div>
+            </mat-tab>
+
+          </mat-tab-group>
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <i class="fa fa-file-text-o mr-1"></i> Bot log
+          </ng-template>
+          <app-log-viewer [botWrapper]="botWrapper"
+                          *ngIf="menuStatusDTO.menuGroup === 1 && menuStatusDTO.selectedIndex === 3"
+                          [menuStatusDTO]="menuStatusDTO"></app-log-viewer>
+        </mat-tab>
+
+      </mat-tab-group>
+      <div *ngIf=" this.menuStatusDTO.menuGroup === 0" class="">
+        <app-log-viewer [menuStatusDTO]="menuStatusDTO"></app-log-viewer>
+      </div>
+
+
+    </div>
+
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
