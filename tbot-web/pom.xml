@@ -140,7 +140,7 @@
 								<configuration>
 									<includes>tbot-web.jar</includes>
 									<excludes>pom.xml</excludes>
-									<!-- properties added in maven users settings.xml -->
+									<!-- properties added in maven users settings.xml  -->
 									<fromDir>${repo.path}</fromDir>
 									<url>${ssh.url}</url>
 									<toDir>${ssh.toDir}</toDir>
