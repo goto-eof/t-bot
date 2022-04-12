@@ -12,6 +12,6 @@ Single-page application and daemon that allows to retrieve RSS data and send it 
 
 **UPDATES**
 
-2022-04-12 - added deploy with wagon for tbot-web and tbot-daemon through wagon-ssh referring to the maven user settings.xml for properties
+2022-04-12 - added deploy with wagon for tbot-web and tbot-daemon through wagon-ssh referring to the maven user settings.xml for properties; Added maven user settings sample file.
 
 ~~Currently all project information are available in italian [here](http://dodu.it/it/t-bot/).~~
