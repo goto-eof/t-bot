@@ -1,3 +1,5 @@
+# follow the path structure
+
 # replace USER with your username
 
 # make script executable
