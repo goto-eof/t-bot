@@ -1,0 +1,9 @@
+[Unit]
+Description=T-Bot daemon
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/USER/tbot/script-tbot-daemon.sh
+
+[Install]
+WantedBy=multi-user.target
