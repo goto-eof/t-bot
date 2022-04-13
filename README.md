@@ -25,4 +25,6 @@ http://RASPBERRY-PI-IP:8081/t-bot-manager/
 
 2022-04-12 - added deploy with wagon for tbot-web and tbot-daemon through wagon-ssh referring to the maven user settings.xml for properties; Added maven user settings sample file.
 
+2022-04-13 - When we build with uploadToRaspberryPi, we also will add an entry for the main class in the jars MANIFEST file
+
 ~~Currently all project information are available in italian [here](http://dodu.it/it/t-bot/).~~
