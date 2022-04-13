@@ -30,6 +30,12 @@ Follow [this configuration](https://github.com/AndreiDodu/t-bot/tree/main/tbot/c
 http://RASPBERRY-PI-IP:8081/t-bot-manager/
 
 
+
+
+
+
+
+
 **UPDATES**
 
 2022-04-12 - added deploy with wagon for tbot-web and tbot-daemon through wagon-ssh referring to the maven user settings.xml for properties; Added maven user settings sample file.
