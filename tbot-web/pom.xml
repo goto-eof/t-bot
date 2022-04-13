@@ -113,9 +113,10 @@
 			</extension>
 		</extensions>
 	</build>
-	
+
 	<profiles>
-		<!-- This profile is used to upload the repo on my raspberry pi that I am using as dev server-->
+		<!-- This profile is used to upload the repo on my raspberry pi that I 
+			am using as dev server -->
 		<!-- in order to execute it, write down "mvn install -P uploadToRaspberryPi" -->
 		<profile>
 			<id>uploadToRaspberryPi</id>
@@ -125,7 +126,22 @@
 			</properties>
 
 			<build>
+				<finalName>${filename}</finalName>
 				<plugins>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+						<configuration>
+							<mainClass>org.andreidodu.tbot.TbotManagerApplication</mainClass>
+						</configuration>
+						<executions>
+							<execution>
+								<goals>
+									<goal>repackage</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
 					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>wagon-maven-plugin</artifactId>
@@ -140,7 +156,7 @@
 								<configuration>
 									<includes>tbot-web.jar</includes>
 									<excludes>pom.xml</excludes>
-									<!-- properties added in maven users settings.xml  -->
+									<!-- properties added in maven users settings.xml -->
 									<fromDir>${repo.path}</fromDir>
 									<url>${ssh.url}</url>
 									<toDir>${ssh.toDir}</toDir>
@@ -153,6 +169,6 @@
 			</build>
 		</profile>
 	</profiles>
-	
-	
+
+
 </project>

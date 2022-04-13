@@ -81,6 +81,11 @@
 			<artifactId>wagon-ssh</artifactId>
 			<version>3.5.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-shade-plugin</artifactId>
+			<version>3.3.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -104,7 +109,8 @@
 	</build>
 
 	<profiles>
-		<!-- This profile is used to upload the repo on my raspberry pi that I am using as dev server-->
+		<!-- This profile is used to upload the repo on my raspberry pi that I 
+			am using as dev server -->
 		<!-- in order to execute it, write down "mvn install -P uploadToRaspberryPi" -->
 		<profile>
 			<id>uploadToRaspberryPi</id>
@@ -114,7 +120,22 @@
 			</properties>
 
 			<build>
+				<finalName>${filename}</finalName>
 				<plugins>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+						<configuration>
+							<mainClass>org.andreidodu.tbot.TelebotApplication</mainClass>
+						</configuration>
+						<executions>
+							<execution>
+								<goals>
+									<goal>repackage</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
 					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>wagon-maven-plugin</artifactId>
