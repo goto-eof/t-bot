@@ -1,3 +1,5 @@
+# follow the path structure
+
 # set file permissions and enable them as services
 
 chmod 644 /etc/systemd/system/tbot-daemon.service
