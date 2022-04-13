@@ -5,7 +5,7 @@
 
 **DESCRIPTION**
 
-Single-page application and daemon that allows to retrieve RSS data and send it to a Telegram group/channel through Telegram API.
+Single-page application and daemon that allows to retrieve RSS data and send it to a Telegram group/channel through Telegram API. The tbot-web project allows to configure the tbot-daemon through a web application in angular. The tbot-daemon sends messages in background basing on the configuration set through user interface.
 
 **CONFIGURATION**
 
