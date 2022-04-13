@@ -1,0 +1,9 @@
+[Unit]
+Description=T-Bot web
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/USER/tbot/script-tbot-web.sh
+
+[Install]
+WantedBy=multi-user.target
