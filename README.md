@@ -22,6 +22,7 @@ java -jar "tbot-web.jar"
 
 
 **2.2 - Start jar files as services at startup**
+
 Follow [this configuration](https://github.com/AndreiDodu/t-bot/tree/main/tbot/config-samples/linux)
 
 **3 - Access to the web application and start to configure daemon**
