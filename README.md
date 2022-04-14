@@ -42,4 +42,6 @@ http://RASPBERRY-PI-IP:8081/t-bot-manager/
 
 2022-04-13 - When we build with uploadToRaspberryPi, we also will add an entry for the main class in the jars MANIFEST file; Added run as service configuration for linux. 
 
+2022-04-14 - upgraded to Angular 13 and added tranlsation module (uses ngx-translate library).
+
 ~~Currently all project information are available in italian [here](http://dodu.it/it/t-bot/).~~
