@@ -86,6 +86,10 @@ export class ControlPanelHomeComponent implements OnInit {
     bot._toggle = false;
   }
 
+  existsUrls(bot: BotDTO): boolean {
+    return bot.urls.length > 0;
+  }
+
   edit(bot: BotDTO): void {
     this.selectedIndexChange(1);
     this.clickPanelActions(bot);

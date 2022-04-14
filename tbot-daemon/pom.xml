@@ -142,7 +142,7 @@
 						<version>2.0.2</version>
 						<executions>
 							<execution>
-								<id>upload-javadoc</id>
+								<id>upload-jars</id>
 								<phase>install</phase>
 								<goals>
 									<goal>upload</goal>
@@ -157,6 +157,24 @@
 									<serverId>ssh-repository</serverId>
 								</configuration>
 							</execution>
+							<!-- 
+							<execution>
+								<id>restart-services</id>
+								<phase>package</phase>
+								<goals>
+									<goal>sshexec</goal>
+								</goals>
+								<configuration>
+									<url>${ssh.url}</url>
+									<serverId>ssh-repository</serverId>
+									<commands>
+										<command>su service tbot-daemon restart</command>
+										<command>su service tbot-daemon status</command>
+									</commands>
+									<displayCommandOutputs>true</displayCommandOutputs>
+								</configuration>
+							</execution>
+							 -->
 						</executions>
 					</plugin>
 				</plugins>
