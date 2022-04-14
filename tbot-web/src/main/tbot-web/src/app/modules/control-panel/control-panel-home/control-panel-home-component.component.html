@@ -117,6 +117,9 @@
             </mat-tab>
 
           </mat-tab-group>
+          <button class="btn btn-primary w-25 text-center mt-lg-5 float-right" *ngIf="!existsUrls(botWrapper.selectedBot)" (click)="newUrl(botWrapper.selectedBot)">
+            <i class="fa fa-link"></i> <span class="ml-1">Aggiungi URL</span>
+          </button>
         </mat-tab>
 
         <mat-tab>
