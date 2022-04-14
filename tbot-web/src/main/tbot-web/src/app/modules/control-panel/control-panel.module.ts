@@ -18,6 +18,7 @@ import {BotInfoComponent} from './control-panel-home/bot-info/bot-info.component
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
+import {TranslateModule} from '@ngx-translate/core';
 
 
 @NgModule({
@@ -26,23 +27,24 @@ import {MatCardModule} from '@angular/material/card';
     UrlSettingsComponent,
     LogViewerComponent,
     BotInfoComponent],
-  imports: [
-    CommonModule,
-    ControlPanelRoutesModule,
-    GlobalModule,
-    MatTabsModule,
-    MatSidenavModule,
-    MatExpansionModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatListModule,
-    MatCardModule
-  ],
+    imports: [
+        CommonModule,
+        ControlPanelRoutesModule,
+        GlobalModule,
+        MatTabsModule,
+        MatSidenavModule,
+        MatExpansionModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatInputModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatIconModule,
+        MatToolbarModule,
+        MatListModule,
+        MatCardModule,
+        TranslateModule
+    ],
   exports: []
 })
 export class ControlPanelModule {

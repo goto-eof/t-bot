@@ -79,7 +79,7 @@
                      [selectedIndex]="selectedIndex">
         <mat-tab>
           <ng-template mat-tab-label>
-            <i class="fa fa-home mr-1"></i> Info sul Bot
+            <i class="fa fa-home mr-1"></i>{{'botInfo' | translate}}
           </ng-template>
           <app-bot-info [botWrapper]="botWrapper"></app-bot-info>
         </mat-tab>
@@ -87,7 +87,7 @@
 
         <mat-tab>
           <ng-template mat-tab-label>
-            <i class="fa fa-cogs mr-1"></i> Impostazioni Bot
+            <i class="fa fa-cogs mr-1"></i> {{'botSettings' | translate}}
           </ng-template>
           <app-bot-settings [bot]="botWrapper.selectedBot"></app-bot-settings>
         </mat-tab>
