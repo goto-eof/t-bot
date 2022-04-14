@@ -13,6 +13,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {YesNotDialogComponent} from './modules/control-panel/control-panel-home/dialogs/yes-not-dialog/yes-not-dialog.component';
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import { I18nModule } from './i18n/i18n.module';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
     MatToolbarModule,
     MatListModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    I18nModule
     //BrowserAnimationsModule,
   ],
   providers: [{
