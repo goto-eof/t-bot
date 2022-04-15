@@ -18,8 +18,10 @@
 		<java.version>1.8</java.version>
 		<filename>tbot-web</filename>
 		<start-class>org.andreidodu.tbot.TbotManagerApplication</start-class>
-		<node.version>v14.4.0</node.version>
-		<npm.version>6.14.5</npm.version>
+		<node.version>v14.17.2</node.version>
+		<npm.version>6.14.13</npm.version>
+		<node.version.maven.plugin>v14.4.0</node.version.maven.plugin>
+		<npm.version.maven.plugin>6.14.5</npm.version.maven.plugin>
 		<context.path>/t-bot-manager/</context.path>
 	</properties>
 
@@ -61,17 +63,16 @@
 					<skipSource>true</skipSource>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>com.github.eirslett</groupId>
 				<artifactId>frontend-maven-plugin</artifactId>
-				<version>0.0.28</version>
+				<version>1.12.1</version>
 				<configuration>
-					<nodeVersion>${node.version}</nodeVersion>
-					<npmVersion>${npm.version}</npmVersion>
-					<nodeDownloadRoot>http://nodejs.org/dist/</nodeDownloadRoot>
-					<npmDownloadRoot>http://registry.npmjs.org/npm/-/</npmDownloadRoot>
-					<installDirectory>target/webapp</installDirectory>
-					<workingDirectory>src/main/tbot-web/src</workingDirectory>
+					 <workingDirectory>./src/main/tbot-web</workingDirectory>
+                    <installDirectory>target</installDirectory>
+					<nodeVersion>v14.17.2</nodeVersion>
+					<npmVersion>6.14.13</npmVersion>
 				</configuration>
 				<executions>
 					<execution>
@@ -79,27 +80,21 @@
 						<goals>
 							<goal>install-node-and-npm</goal>
 						</goals>
-						<phase>generate-resources</phase>
 					</execution>
 					<execution>
 						<id>npm install</id>
 						<goals>
 							<goal>npm</goal>
 						</goals>
-						<phase>generate-resources</phase>
-						<configuration>
-							<arguments>ci --loglevel=error</arguments>
-						</configuration>
 					</execution>
 					<execution>
-						<id>build</id>
+						<id>npm run build</id>
 						<goals>
 							<goal>npm</goal>
 						</goals>
 						<configuration>
-							<arguments>run build -- --prod --base-href ${context.path}</arguments>
+							<arguments>run build -- --configuration production --base-href ${context.path}</arguments>
 						</configuration>
-						<phase>generate-resources</phase>
 					</execution>
 				</executions>
 			</plugin>
