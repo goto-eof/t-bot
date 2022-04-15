@@ -44,4 +44,6 @@ http://RASPBERRY-PI-IP:8081/t-bot-manager/
 
 2022-04-14 - upgraded to Angular 13 and added tranlsation module (uses ngx-translate library).
 
+2022-04-15 - Fixed configuration for building t-bot web project with maven.
+
 ~~Currently all project information are available in italian [here](http://dodu.it/it/t-bot/).~~
