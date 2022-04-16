@@ -19,22 +19,24 @@ Dupplicate application.prod.yml, rename it to application.yml and change db conf
 
 Do the same for the tbot-daemon project.
 
-**3 - Database**
+**3 - create a user maven settingx.xml file and add and edit the content [from here](https://github.com/AndreiDodu/t-bot/blob/main/tbot/config-samples/user-maven-settings.xml).
+
+**4 - Database**
 
 Create a new schema called tbot. 
 
-**4.1 - Start jar files for manual execution**
+**5.1 - Start jar files for manual execution**
 
 java -jar "tbot-daemon.jar"
 
 java -jar "tbot-web.jar"
 
 
-**4.2 - Start jar files as services at linux startup**
+**5.2 - Start jar files as services at linux startup**
 
 Follow [this configuration](https://github.com/AndreiDodu/t-bot/tree/main/tbot/config-samples/linux)
 
-**5 - Access to the web application and start to configure daemon**
+**6 - Access to the web application and start to configure daemon**
 
 http://RASPBERRY-PI-IP:8081/t-bot-manager/
 
