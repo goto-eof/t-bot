@@ -13,27 +13,26 @@ Single-page application and daemon that allows to retrieve RSS data and send it 
 
 In eclipses __Run configurations__ add new __Maven Build__ entry that should contain as __Goals__ value **install -P uploadToRaspberryPi**. In this way we run the maven profile called __uploadToRaspberryPi__, that will upload, after making a project build, our jar file to the Raspberry PI device.
 
+**2 - tbot-web and tbot-daemon configuration**
 
-**2.1 - Start jar files for manual execution**
+Dupplicate application.prod.yml, rename it to application.yml and change db configuration.
+
+Do the same for the tbot-daemon project.
+
+**3 - Database**
+
+Create a new schema called tbot. 
+
+**4.1 - Start jar files for manual execution**
 
 java -jar "tbot-daemon.jar"
 
 java -jar "tbot-web.jar"
 
 
-**2.2 - Start jar files as services at linux startup**
+**4.2 - Start jar files as services at linux startup**
 
 Follow [this configuration](https://github.com/AndreiDodu/t-bot/tree/main/tbot/config-samples/linux)
-
-**3 - tbot-web and tbot-daemon configuration**
-
-Dupplicate application.prod.yml, rename it to application.yml and change db configuration.
-
-Do the same for the tbot-daemon project.
-
-**4 - Database**
-
-Create a new schema called tbot. 
 
 **5 - Access to the web application and start to configure daemon**
 
