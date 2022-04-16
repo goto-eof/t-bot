@@ -31,7 +31,11 @@ Dupplicate application.prod.yml, rename it to application.yml and change db conf
 
 Do the same for the tbot-daemon project.
 
-**4 - Access to the web application and start to configure daemon**
+**4 - Database**
+
+Create a new schema called tbot. 
+
+**5 - Access to the web application and start to configure daemon**
 
 http://RASPBERRY-PI-IP:8081/t-bot-manager/
 
