@@ -25,9 +25,11 @@ java -jar "tbot-web.jar"
 
 Follow [this configuration](https://github.com/AndreiDodu/t-bot/tree/main/tbot/config-samples/linux)
 
-**3 - tbot-web configuration**
+**3 - tbot-web and tbot-daemon configuration**
 
-Dupplicate application.prod.yml, rename it to application.yml and change db configuration
+Dupplicate application.prod.yml, rename it to application.yml and change db configuration.
+
+Do the same for the tbot-daemon project.
 
 **4 - Access to the web application and start to configure daemon**
 
