@@ -25,7 +25,11 @@ java -jar "tbot-web.jar"
 
 Follow [this configuration](https://github.com/AndreiDodu/t-bot/tree/main/tbot/config-samples/linux)
 
-**3 - Access to the web application and start to configure daemon**
+**3 - tbot-web configuration**
+
+Dupplicate application.prod.yml, rename it to application.yml and change db configuration
+
+**4 - Access to the web application and start to configure daemon**
 
 http://RASPBERRY-PI-IP:8081/t-bot-manager/
 
