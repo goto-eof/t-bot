@@ -19,7 +19,9 @@ Dupplicate application.prod.yml, rename it to application.yml and change db conf
 
 Do the same for the tbot-daemon project.
 
-**3 - create a user maven settingx.xml file and add and edit the content [from here](https://github.com/AndreiDodu/t-bot/blob/main/tbot/config-samples/user-maven-settings.xml).
+**3 - maven settings**
+
+Create a user maven settingx.xml file and add and edit the content [from here](https://github.com/AndreiDodu/t-bot/blob/main/tbot/config-samples/user-maven-settings.xml).
 
 **4 - Database**
 
