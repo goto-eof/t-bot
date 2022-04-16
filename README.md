@@ -25,7 +25,7 @@ Create a user maven settingx.xml file and add and edit the content [from here](h
 
 **4 - Database**
 
-Create a new schema called tbot. 
+Create a new schema called tbot and a new user called tbot with "password" as password for development environment. 
 
 **5.1 - Start jar files for manual execution**
 
