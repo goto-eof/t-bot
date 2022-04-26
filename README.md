@@ -9,7 +9,7 @@ Single-page application and daemon that allows to retrieve RSS data and send it 
 
 **CONFIGURATION**
 
-~~**1 - Upload jar on your raspberry PI**
+**1 - Upload jar on your raspberry PI**
 
 In eclipses __Run configurations__ add new __Maven Build__ entry that should contain as __Goals__ value **install -P uploadToRaspberryPi**. In this way we run the maven profile called __uploadToRaspberryPi__, that will upload, after making a project build, our jar file to the Raspberry PI device.
 
@@ -57,6 +57,6 @@ http://RASPBERRY-PI-IP:8081/t-bot-manager/
 
 2022-04-14 - upgraded to Angular 13 and added tranlsation module (uses ngx-translate library).
 
-2022-04-15 - Fixed configuration for building t-bot web project with maven.~~
+2022-04-15 - Fixed configuration for building t-bot web project with maven.
 
 ~~Currently all project information are available in italian [here](http://dodu.it/it/t-bot/).~~
