@@ -9,7 +9,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.Mappings;
 
-@Mapper(componentModel = "Spring")
+@Mapper(componentModel = "spring")
 public interface BotQstStatusMapper {
 
 	BotQstStatusDB toDomain(BotQstStatusDTO dto);

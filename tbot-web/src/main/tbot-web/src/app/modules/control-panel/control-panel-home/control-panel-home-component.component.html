@@ -2,8 +2,8 @@
 
   <mat-sidenav #drawer fixedInViewport="true" [mode]="drawer" [opened]="false" class="menu">
     <mat-toolbar color="primary" class="w-100 justify-content-between theme-color">
-      <span class="d-flex"><mat-icon class="mr-2">settings</mat-icon> Menu | T-Bot Manager</span>
-      <button class="btn btn-primary d-flex" href="#" (click)="drawer.close()">Chiudi</button>
+      <span class="d-flex"><mat-icon class="mr-2">settings</mat-icon>{{'menu.title' | translate}}</span>
+      <button class="btn btn-primary d-flex" href="#" (click)="drawer.close()">{{'menu.close' | translate}}</button>
     </mat-toolbar>
     <mat-drawer-container class="w-100 h-90 flex-wrap">
 
@@ -11,9 +11,9 @@
                   [opened]="isMenuOpened" role="navigation">
 
 
-        <button class="btn btn-warning mb-2 w-100" (click)="goToLog()"><i class="fa fa-history"></i> Global log</button>
+        <button class="btn btn-warning mb-2 w-100" (click)="goToLog()"><i class="fa fa-history"></i>{{'menu.log' | translate}}</button>
 
-        <button class="btn btn-success mb-2 w-100" (click)="newBot()"><i class="fa fa-plus"></i> Nuovo bot</button>
+        <button class="btn btn-success mb-2 w-100" (click)="newBot()"><i class="fa fa-plus"></i>{{'menu.newBot' | translate}}</button>
 
         <mat-card *ngFor="let bot of botWrapper.bots; index as i"
                   class="menu-item-wrapper {{bot === botWrapper.selectedBot ? 'rounded selected' : ''}}">
@@ -26,7 +26,7 @@
 
             <button class="btn btn-success menu-button w-100" (click)="edit(bot)">
               <i class="fa fa-android"></i>
-              <span class="ml-1"> Modifica</span>
+              <span class="ml-1"> {{'menu.edit' | translate}}</span>
             </button>
 
           </mat-card-content>
@@ -34,13 +34,13 @@
 
             <button mat-button (click)="removeBot(bot)" class="w-50 menu-button text-center btn btn-link">
               <i class="fa fa-minus-circle"></i>
-              <span class="ml-1"> Rimuovi Bot</span>
+              <span class="ml-1"> {{'menu.removeBot' | translate}}</span>
             </button>
 
 
             <button mat-button (click)="newUrl(bot)" class="w-50 menu-button text-center btn btn-link">
               <i class="fa fa-plus-circle"></i>
-              <span class="ml-1"> Aggiungi URL</span>
+              <span class="ml-1"> {{'menu.addUrl' | translate}}</span>
             </button>
 
           </mat-card-actions>
@@ -66,7 +66,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span class="p-1"></span>
-      <span>T-Bot Manager</span>
+      <span>{{'app.title' | translate}}</span>
     </mat-toolbar>
 
 
@@ -95,9 +95,9 @@
 
         <mat-tab>
           <ng-template mat-tab-label>
-            <i class="fa fa-globe mr-1"></i> URLs
+            <i class="fa fa-globe mr-1"></i> {{'urls' | translate}}
           </ng-template>
-          <h1 class="text-center">URL del Bot <em>{{botWrapper.selectedBot._nome}}</em></h1>
+          <h1 class="text-center">{{'botUrl' | translate}} <em>{{botWrapper.selectedBot._nome}}</em></h1>
           <p class="text-center">{{botWrapper.selectedBot._descrizione}}</p>
           <mat-tab-group mat-align-tabs="start" class="mt-0  p-4 flex-column"
                          *ngIf="isBotSelected(botWrapper.selectedBot)"
@@ -111,20 +111,20 @@
               <div class="w-75 m-auto pt-5">
                 <app-url-settings [selectedBot]="botWrapper.selectedBot" [url]="url"></app-url-settings>
                 <button class="btn btn-danger w-25 text-center mt-1" (click)="removeUrl(botWrapper.selectedBot, url)">
-                  <i class="fa fa-trash"></i> <span class="ml-1"> Elimina URL</span>
+                  <i class="fa fa-trash"></i> <span class="ml-1"> {{'deleteUrl' | translate}} </span>
                 </button>
               </div>
             </mat-tab>
 
           </mat-tab-group>
           <button class="btn btn-primary w-25 text-center mt-lg-5 float-right" *ngIf="!existsUrls(botWrapper.selectedBot)" (click)="newUrl(botWrapper.selectedBot)">
-            <i class="fa fa-link"></i> <span class="ml-1">Aggiungi URL</span>
+            <i class="fa fa-link"></i> <span class="ml-1">{{'addUrl' | translate}} </span>
           </button>
         </mat-tab>
 
         <mat-tab>
           <ng-template mat-tab-label>
-            <i class="fa fa-file-text-o mr-1"></i> Bot log
+            <i class="fa fa-file-text-o mr-1"></i> {{'botLog' | translate}}
           </ng-template>
           <app-log-viewer [botWrapper]="botWrapper"
                           *ngIf="menuStatusDTO.menuGroup === 1 && menuStatusDTO.selectedIndex === 3"

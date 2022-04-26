@@ -15,6 +15,7 @@ import {MenuStatusDTO} from '../../../dto/menu-status-dto';
 import {MatSidenav} from '@angular/material/sidenav';
 import {DialogService} from '../../../services/dialog.service';
 import {environment} from '../../../../environments/environment';
+import {TranslateService} from "@ngx-translate/core";
 
 interface Food {
   value: string;
@@ -50,7 +51,8 @@ export class ControlPanelHomeComponent implements OnInit {
               private commonService: CommonService,
               private dialogService: DialogService,
               private caratteristicheService: CaratteristicheService,
-              private router: Router) {
+              private router: Router,
+              private translate: TranslateService) {
     this.botWrapper = {
       selectedBot: null,
       bots: []
@@ -66,6 +68,7 @@ export class ControlPanelHomeComponent implements OnInit {
         this.selectedIndex = 0;
       }
     });
+    // this.translate.use('en');
   }
 
   ngOnInit(): void {

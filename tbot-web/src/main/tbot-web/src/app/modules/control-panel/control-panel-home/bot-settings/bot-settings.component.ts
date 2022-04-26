@@ -41,6 +41,9 @@ export class BotSettingsComponent implements OnInit, AfterViewInit, AfterContent
   }
 
   ngOnInit(): void {
+    this.bot.caratteristiche.forEach(ele => {
+      console.log(ele.id + ' - ' + ele.obbligatorio)
+    });
     this.ricalcolaProprieta();
   }
 
