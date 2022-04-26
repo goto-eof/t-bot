@@ -7,42 +7,20 @@
 
 Single-page application and daemon that allows to retrieve RSS data and send it to a Telegram group/channel through Telegram API. The tbot-web project allows to configure the tbot-daemon through a web application in angular. The java tbot-daemon sends messages in background basing on the configuration set through user interface.
 
+
+The tbot-web project runs as a simple spring boot application. Currently the software application has been translated into only two languages: English and Italian. Tbot-web was tested on a Linux machine running a local MySQL instance.
+
 **CONFIGURATION**
 
-**1 - Upload jar on your raspberry PI**
+** DB configuration **
+Create a scheme called "tbot", to which the user called "tbot" is associated, with the password "password".
 
-In eclipses __Run configurations__ add new __Maven Build__ entry that should contain as __Goals__ value **install -P uploadToRaspberryPi**. In this way we run the maven profile called __uploadToRaspberryPi__, that will upload, after making a project build, our jar file to the Raspberry PI device.
-
-**2 - tbot-web and tbot-daemon configuration**
-
-Dupplicate application.prod.yml, rename it to application.yml and change db configuration.
-
-Do the same for the tbot-daemon project.
-
-**3 - maven settings**
-
-Create a user maven settingx.xml file and add and edit the content [from here](https://github.com/AndreiDodu/t-bot/blob/main/tbot/config-samples/user-maven-settings.xml).
-
-**4 - Database**
-
-Create a new schema called tbot and a new user called tbot with "password" as password for development environment. 
-
-**5.1 - Start jar files for manual execution**
-
-java -jar "tbot-daemon.jar"
-
-java -jar "tbot-web.jar"
+** Maven settings **
+Create a user maven settingx.xml file and add and edit the content  [from here](https://github.com/AndreiDodu/t-bot/blob/main/tbot/config-samples/user-maven-settings.xml).
 
 
-**5.2 - Start jar files as services at linux startup**
-
-Follow [this configuration](https://github.com/AndreiDodu/t-bot/tree/main/tbot/config-samples/linux)
-
-**6 - Access to the web application and start to configure daemon**
-
-http://RASPBERRY-PI-IP:8081/t-bot-manager/
-
-
+** Upload jar on a remote server **
+In eclipses Run configurations add new Maven Build entry that should contain as Goals value install -P uploadToRaspberryPi. In this way we run the maven profile called uploadToRaspberryPi, that will upload, after making a project build, our jar file to the Raspberry PI device.
 
 
 
@@ -58,5 +36,7 @@ http://RASPBERRY-PI-IP:8081/t-bot-manager/
 2022-04-14 - upgraded to Angular 13 and added tranlsation module (uses ngx-translate library).
 
 2022-04-15 - Fixed configuration for building t-bot web project with maven.
+
+2022-04-26 - Upgraded to angular 13 and added the italian translation.
 
 ~~Currently all project information are available in italian [here](http://dodu.it/it/t-bot/).~~
