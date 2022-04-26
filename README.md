@@ -12,16 +12,16 @@ The tbot-web project runs as a simple spring boot application. Currently the sof
 
 **CONFIGURATION**
 
-** DB configuration **
+**DB configuration**
 
 Create a scheme called "tbot", to which the user called "tbot" is associated, with the password "password".
 
-** Maven settings **
+**Maven settings**
 
 Create a user maven settingx.xml file and add and edit the content  [from here](https://github.com/AndreiDodu/t-bot/blob/main/tbot/config-samples/user-maven-settings.xml).
 
 
-** Upload jar on a remote server **
+**Upload jar on a remote server**
 
 In eclipses Run configurations add new Maven Build entry that should contain as Goals value install -P uploadToRaspberryPi. In this way we run the maven profile called uploadToRaspberryPi, that will upload, after making a project build, our jar file to the Raspberry PI device.
 
