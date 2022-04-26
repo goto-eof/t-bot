@@ -19,14 +19,15 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {TranslateModule} from '@ngx-translate/core';
+import {I18nModule} from "../../i18n/i18n.module";
 
 
 @NgModule({
-  declarations: [ControlPanelHomeComponent,
-    BotSettingsComponent,
-    UrlSettingsComponent,
-    LogViewerComponent,
-    BotInfoComponent],
+    declarations: [ControlPanelHomeComponent,
+        BotSettingsComponent,
+        UrlSettingsComponent,
+        LogViewerComponent,
+        BotInfoComponent],
     imports: [
         CommonModule,
         ControlPanelRoutesModule,
@@ -43,9 +44,10 @@ import {TranslateModule} from '@ngx-translate/core';
         MatToolbarModule,
         MatListModule,
         MatCardModule,
-        TranslateModule
+        TranslateModule,
+        I18nModule
     ],
-  exports: []
+    exports: []
 })
 export class ControlPanelModule {
 }

@@ -6,7 +6,6 @@ import org.andreidodu.tbot.dto.UrlDTO;
 import org.andreidodu.tbot.service.UrlConfigurationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(maxAge = 3600)
 @RestController
 @RequestMapping(path = "/url-configuration")
 public class UrlConfigurationController {
@@ -36,7 +34,7 @@ public class UrlConfigurationController {
 
 	@DeleteMapping(path = "/codiceBot/{codiceBot}/codiceQuestionario/{codiceQuestionario}")
 	public ResponseEntity<Boolean> delete(@PathVariable(name = "codiceBot") String codiceBot,
-					@PathVariable(name = "codiceQuestionario") String codiceQuestionario) {
+			@PathVariable(name = "codiceQuestionario") String codiceQuestionario) {
 		return ResponseEntity.ok(this.urlConfigurationService.delete(codiceBot, codiceQuestionario));
 	}
 
@@ -47,8 +45,9 @@ public class UrlConfigurationController {
 
 	@PostMapping(path = "/reloadConfiguration/codiceBot/{codiceBot}/codiceQuestionario/{codiceQuestionario}/reload/{reload}")
 	public ResponseEntity<Boolean> reloadConfiguration(@PathVariable(name = "codiceBot") String codiceBot,
-					@PathVariable("codiceQuestionario") String codiceQuestionario, @PathVariable("reload") Boolean reload) {
-		return ResponseEntity.ok(this.urlConfigurationService.reloadConfiguration(codiceBot, codiceQuestionario, reload));
+			@PathVariable("codiceQuestionario") String codiceQuestionario, @PathVariable("reload") Boolean reload) {
+		return ResponseEntity
+				.ok(this.urlConfigurationService.reloadConfiguration(codiceBot, codiceQuestionario, reload));
 	}
 
 }

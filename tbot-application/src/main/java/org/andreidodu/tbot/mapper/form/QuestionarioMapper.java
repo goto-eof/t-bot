@@ -8,7 +8,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
-@Mapper(componentModel = "Spring", uses = { DomandaMapper.class })
+@Mapper(componentModel = "spring", uses = { DomandaMapper.class })
 public interface QuestionarioMapper {
 
 	QuestionarioDB toDomain(QuestionarioDTO dto);

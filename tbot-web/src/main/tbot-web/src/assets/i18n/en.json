@@ -1,4 +1,21 @@
 {
   "botInfo": "Bot info",
-  "botSettings": "Bot settings"
+  "botSettings": "Bot settings",
+  "urls": "URLs",
+  "botUrl": "Bot URL",
+  "deleteUrl": "Delete URL",
+  "addUrl": "Add URL",
+  "botLog": "Bot log",
+  "menu": {
+    "title": "Menu | T-Bot Manager",
+    "close": "Close",
+    "log": "Glob log",
+    "newBot": "New Bot",
+    "edit": "Edit",
+    "removeBot": "Remove Bot",
+    "addUrl": "Add URL"
+  },
+  "app": {
+    "title": "T-Bot Manager"
+  }
 }
