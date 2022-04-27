@@ -40,6 +40,6 @@ In eclipses Run configurations add new Maven Build entry that should contain as 
 
 2022-04-15 - Fixed configuration for building t-bot web project with maven.
 
-2022-04-26 - Upgraded to angular 13 and added the translation in italian.
+2022-04-26 - Added the translation in italian.
 
 ~~Currently all project information are available in italian [here](http://dodu.it/it/t-bot/).~~
