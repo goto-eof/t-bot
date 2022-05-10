@@ -20,7 +20,7 @@
 		<module>../tbot-daemon</module>
 		<module>../tbot-entities</module>
 		<module>../tbot-web</module>
-		<module>../telegrambots</module>
+		<module>../../TelegramBots/telegrambots</module>
 	</modules>
 
 	<dependencies>
