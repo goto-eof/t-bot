@@ -37,7 +37,7 @@ public class TelebotApplication implements CommandLineRunner {
 			Thread thread = this.threadUtil.startNewThread(botName, false);
 			threads.put(botName, thread);
 		});
-		// verifica se i thread sono vivi
+		// check if threads are alive
 		this.threadUtil.startNewThreadIsAliveController("system", false, threads);
 
 	}

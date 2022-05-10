@@ -15,7 +15,7 @@ spring:
         format_sql: false
 logging:
   file:
-    path: /tbot-logs
+    path: /var/log/tbot-logs
     name: ${logging.file.path}/system.log
   level:
     org.andreidodu: DEBUG

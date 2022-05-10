@@ -29,7 +29,7 @@ application:
         
 logging:
   file:
-    path: /tbot-logs
+    path: /var/log/tbot-logs
     name: ${logging.file.path}/web.log
   level:
     org.andreidodu: DEBUG

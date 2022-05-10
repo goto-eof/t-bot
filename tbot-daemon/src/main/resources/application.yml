@@ -12,15 +12,17 @@ spring:
     show-sql: true
     properties:
       hibernate:
-        format_sql: false
+        format_sql: true
 logging:
   file:
-    path: /tbot-logs
+    path: /var/log/tbot-logs
     name: ${logging.file.path}/system.log
   level:
-    org.andreidodu: DEBUG
     root: INFO
-    com.apptastic: DEBUG
+    org:
+      andreidodu: DEBUG
+    com:
+      apptastic: DEBUG
   pattern:
     console: "%d %-5level %logger : %msg%n"
     file: "%d %-5level [%thread] %logger : %msg%n"
