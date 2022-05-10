@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<artifactId>tbot-parent</artifactId>
@@ -23,6 +21,8 @@
 		<node.version.maven.plugin>v14.4.0</node.version.maven.plugin>
 		<npm.version.maven.plugin>6.14.5</npm.version.maven.plugin>
 		<context.path>/t-bot-manager/</context.path>
+		<org.mapstruct>1.3.1.Final</org.mapstruct>
+		<org.projectlombok.version>1.18.20</org.projectlombok.version>
 	</properties>
 
 	<dependencies>
@@ -69,8 +69,8 @@
 				<artifactId>frontend-maven-plugin</artifactId>
 				<version>1.12.1</version>
 				<configuration>
-					 <workingDirectory>./src/main/tbot-web</workingDirectory>
-                    <installDirectory>target</installDirectory>
+					<workingDirectory>./src/main/tbot-web</workingDirectory>
+					<installDirectory>target</installDirectory>
 					<nodeVersion>v14.17.2</nodeVersion>
 					<npmVersion>6.14.13</npmVersion>
 				</configuration>
@@ -164,6 +164,4 @@
 			</build>
 		</profile>
 	</profiles>
-
-
 </project>

@@ -68,7 +68,7 @@ export class ControlPanelHomeComponent implements OnInit {
         this.selectedIndex = 0;
       }
     });
-    // this.translate.use('en');
+    translate.setDefaultLang('en');
   }
 
   ngOnInit(): void {
