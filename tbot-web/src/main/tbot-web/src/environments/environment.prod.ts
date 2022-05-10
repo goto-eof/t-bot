@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  baseUrl: '#NOT_DEFINED',
+  baseUrl: 'http://localhost:8081',
   questionario: {
     showCodiceDomanda: false
   }
