@@ -43,3 +43,6 @@ In eclipses Run configurations add new Maven Build entry that should contain as 
 2022-04-26 - Added the translation in italian.
 
 ~~Currently all project information are available in italian [here](http://dodu.it/it/t-bot/).~~
+
+
+if any problems arise, feel free to [contact me](https://andre-i.dev/#contactme).
